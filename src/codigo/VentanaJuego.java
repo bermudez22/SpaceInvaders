@@ -24,7 +24,7 @@ public class VentanaJuego extends javax.swing.JFrame {
     
     BufferedImage buffer = null;
     int contador=0;
-    
+    Nave miNave = new Nave();
     
     //Bucle de animación del juego
     //en este caso, es un hilo de ejecución nuevo que encarga
@@ -45,6 +45,8 @@ public class VentanaJuego extends javax.swing.JFrame {
         setSize(ANCHOPANTALLA, ALTOPANTALLA);
         buffer = (BufferedImage) jPanel1.createImage(ANCHOPANTALLA,ALTOPANTALLA);
         buffer.createGraphics();
+        miNave.x = ANCHOPANTALLA/2 - miNave.imagen.getWidth(this)/2;
+        miNave.y = ALTOPANTALLA - miNave.imagen.getHeight(this) - 10;
         //inicio el temporizador
         temporizador.start();
     }
@@ -60,9 +62,10 @@ public class VentanaJuego extends javax.swing.JFrame {
         ////////////////////////////////////////////////////////////////////////
         //redibujamos cada elemento en su nueva posicion en el buffer
         
-        contador++;
-        System.out.println(contador);
+        //contador++;
         
+        //pinto la nave
+        g2.drawImage(miNave.imagen, miNave.x, miNave.y, null);
         
         
         
