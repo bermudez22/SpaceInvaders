@@ -17,6 +17,9 @@ public class Nave {
     public int x = 0;
     public int y = 0;
     
+    private boolean pulsadoIzquierda = false;
+    private boolean pulsadoDerecha = false;
+    
     public Nave(){
         try {
         imagen = ImageIO.read(getClass().getResource("/imagenes/nave.png"));
